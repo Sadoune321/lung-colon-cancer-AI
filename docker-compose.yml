@@ -1,0 +1,9 @@
+services:
+  vit_api:
+    build: .
+    container_name: vit_cancer_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./best_vit_lc25000:/app/best_vit_lc25000
+    restart: unless-stopped
