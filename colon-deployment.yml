@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colon-model
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: colon-model
+  template:
+    metadata:
+      labels:
+        app: colon-model
+    spec:
+      containers:
+        - name: colon-model
+          image: wassimrebahi/colon-model:v1 #changez le nom de dockerhub par votre dockerhub 
+          ports:
+            - containerPort: 8000 #le port comme vous voulez

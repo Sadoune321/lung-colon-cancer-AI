@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: colon-service
+spec:
+  type: NodePort
+  selector:
+    app: colon-model
+  ports:
+    - port: 80
+      targetPort: 8000  # mettre le meme port monsionner dans le fichier deployment.yml
+      nodePort: 30007 #changez le selon la disponibilité
